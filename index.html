@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Surprise For You!</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts for elegant typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles to apply the fonts */
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            position: relative; /* Needed for hearts animation */
+        }
+        .font-dancing {
+            font-family: 'Dancing Script', cursive;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Simple fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        /* Floating hearts animation */
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 2rem;
+            color: rgba(244, 114, 182, 0.3); /* Lighter pink color */
+            animation: float 10s linear infinite;
+            z-index: 0;
+        }
+        
+        /* Animation delay classes */
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+
+        /* Ensure animations only run once when they become visible */
+        .animated {
+            opacity: 0;
+        }
+
+        /* Styling for the timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem; /* Space for the line and icon */
+            padding-bottom: 2rem;
+            border-left: 2px solid #fbcfe8; /* Rose color */
+        }
+        .timeline-item:last-child {
+            border-left: none;
+            padding-bottom: 0;
+        }
+        .timeline-icon {
+            position: absolute;
+            left: -0.7rem; /* Center the icon on the line */
+            top: 0;
+            width: 1.25rem;
+            height: 1.25rem;
+            background-color: #f472b6; /* Rose-400 */
+            border-radius: 9999px; /* Make it a circle */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="bg-rose-50 text-gray-800">
+    <!-- Floating Hearts Container -->
+    <div id="hearts-container" class="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden"></div>
+
+    <!-- Container for the entire page -->
+    <div class="container mx-auto p-4 md:p-8 relative z-10">
+
+        <!-- Header/Hero Section -->
+        <header class="text-center py-16 md:py-24 rounded-3xl bg-white shadow-2xl overflow-hidden relative animated">
+            <div class="absolute inset-0 bg-gradient-to-br from-rose-100 to-amber-100 opacity-50"></div>
+            <div class="relative z-10 px-4">
+                <!-- Main title -->
+                <h1 class="font-dancing text-5xl md:text-8xl text-rose-800 mb-4 animated">Happy Birthday, My Love!</h1>
+                <!-- Subtitle -->
+                <p class="font-playfair text-xl md:text-3xl text-gray-600 italic animated delay-1">oh eto para sayo tanga ka</p>
+            </div>
+        </header>
+
+        <!-- Introduction Message Section -->
+        <section class="my-16 md:my-24 flex flex-col md:flex-row items-center gap-8 md:gap-12 animated">
+            <!-- PHOTO 1 -->
+            <div class="w-full md:w-1/3 animated delay-1">
+                <img src="img/profile.jpg" 
+                     alt="A photo of my amazing girlfriend" 
+                     class="rounded-3xl shadow-xl w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105">
+            </div>
+            <div class="w-full md:w-2/3 text-center md:text-left animated delay-2">
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold text-rose-700 mb-4">To the One Who Lights Up My World</h2>
+                <!-- YOUR MESSAGE -->
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Happy birthday to the most incredible person I know. From the moment you came into my life, everything has been brighter and more beautiful. Your smile is my favorite thing to see, and your laughter is music to my ears. I wanted to create this small space on the internet to celebrate you and remind you of how much you mean to me.
+                </p>
+            </div>
+        </section>
+        
+        <!-- NEW: Reasons I Love You Timeline Section -->
+        <section class="my-16 md:my-24 animated">
+             <h2 class="font-playfair text-3xl md:text-4xl font-bold text-rose-700 mb-12 text-center animated delay-1">A Few Reasons Why I Love You...</h2>
+             <div class="max-w-2xl mx-auto">
+                 <!-- 
+                   REASONS TIMELINE: Replace the text with your own reasons. 
+                   Be specific and personal!
+                 -->
+                 <!-- Reason 1 -->
+                 <div class="timeline-item animated delay-1">
+                     <div class="timeline-icon"></div>
+                     <h3 class="font-playfair font-bold text-xl text-rose-600 mb-2">Your Kindness</h3>
+                     <p class="text-gray-600">You have the biggest heart of anyone I've ever met. The way you treat everyone with respect and compassion inspires me every day.</p>
+                 </div>
+                 <!-- Reason 2 -->
+                 <div class="timeline-item animated delay-2">
+                     <div class="timeline-icon"></div>
+                     <h3 class="font-playfair font-bold text-xl text-rose-600 mb-2">Your Sense of Humor</h3>
+                     <p class="text-gray-600">Nobody makes me laugh like you do. Whether it's a silly joke or a witty comment, you always know how to brighten my day.</p>
+                 </div>
+                 <!-- Reason 3 -->
+                 <div class="timeline-item animated delay-3">
+                     <div class="timeline-icon"></div>
+                     <h3 class="font-playfair font-bold text-xl text-rose-600 mb-2">The Way You See the World</h3>
+                     <p class="text-gray-600">You find beauty and wonder in the little things, and it has taught me to appreciate the world in a whole new way.</p>
+                 </div>
+                 <!-- Reason 4 -->
+                 <div class="timeline-item animated delay-4">
+                     <div class="timeline-icon"></div>
+                     <h3 class="font-playfair font-bold text-xl text-rose-600 mb-2">Our Adventures Together</h3>
+                     <p class="text-gray-600">From quiet nights in to exploring new places, every moment with you is a cherished memory I wouldn't trade for anything.</p>
+                 </div>
+             </div>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section class="my-16 md:my-24 text-center animated">
+            <h2 class="font-playfair text-3xl md:text-4xl font-bold text-rose-700 mb-8 animated delay-1">A Few of Our Moments...</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <!-- PHOTO GALLERY -->
+                <div class="animated delay-1"><img src="img/heart.JPG" alt="Memory 1" class="rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"></div>
+                <div class="animated delay-2"><img src="img/chicks.jpg" alt="Memory 2" class="rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl mt-0 md:-mt-8"></div>
+                <div class="animated delay-3"><img src="img/kyotie.JPG" alt="Memory 3" class="rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"></div>
+                <div class="animated delay-4"><img src="img/c9594592-b760-4d47-93f4-34590f4a9851.jpg" alt="Memory 4" class="rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl mt-0 md:-mt-8"></div>
+            </div>
+        </section>
+
+        <!-- Sweet Messages Section -->
+        <section class="my-16 md:my-24 animated">
+            <h2 class="font-playfair text-3xl md:text-4xl font-bold text-rose-700 mb-8 text-center animated delay-1">Little Reminders of My Love</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- SWEET MESSAGES -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg transform transition-transform duration-300 hover:-translate-y-2 animated delay-1"><p class="font-playfair italic text-lg text-gray-700">"You make every single day feel like an adventure."</p></div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg transform transition-transform duration-300 hover:-translate-y-2 animated delay-2"><p class="font-playfair italic text-lg text-gray-700">"I'm so grateful for every laugh, every conversation, every moment with you."</p></div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg transform transition-transform duration-300 hover:-translate-y-2 animated delay-3"><p class="font-playfair italic text-lg text-gray-700">"My world is so much better with you in it. Happy birthday!"</p></div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg transform transition-transform duration-300 hover:-translate-y-2 animated delay-1 sm:col-span-2 lg:col-span-1"><p class="font-playfair italic text-lg text-gray-700">"Thinking of you always makes me smile."</p></div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg transform transition-transform duration-300 hover:-translate-y-2 animated delay-2"><p class="font-playfair italic text-lg text-gray-700">"You're not just my love, you're my best friend."</p></div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg transform transition-transform duration-300 hover:-translate-y-2 animated delay-3"><p class="font-playfair italic text-lg text-gray-700">"Here's to another year of making beautiful memories together."</p></div>
+            </div>
+        </section>
+
+        <!-- NEW: Our Song Section -->
+        <section class="my-16 md:my-24 text-center animated">
+            <h2 class="font-playfair text-3xl md:text-4xl font-bold text-rose-700 mb-8 animated delay-1">Our Song</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8 animated delay-2">Because it always makes me think of you. Close your eyes and listen.</p>
+            <div class="aspect-w-16 aspect-h-9 max-w-3xl mx-auto rounded-2xl shadow-xl overflow-hidden animated delay-3">
+                <!-- 
+                  OUR SONG: 
+                  1. Go to YouTube and find your song.
+                  2. Click "Share", then "Embed".
+                  3. Copy the `src` URL from the iframe code provided by YouTube.
+                  4. Paste that URL to replace the one below.
+                  Example: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+                -->
+                <iframe src="https://www.youtube.com/embed/ojpBt0FkuWA?si=nu-vguXf-80s7OZ3" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen 
+                        class="w-full h-full">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="text-center py-16 mt-16 border-t border-rose-200 animated">
+            <h3 class="font-dancing text-4xl md:text-6xl text-rose-800 mb-4 animated delay-1">With All My Love,</h3>
+            <!-- YOUR NAME -->
+            <p class="font-playfair text-2xl md:text-3xl text-gray-600 animated delay-2">- Keith Nomaj</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- Intersection Observer for fade-in animations ---
+            const animatedElements = document.querySelectorAll('.animated');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            animatedElements.forEach(el => observer.observe(el));
+
+            // --- Floating Hearts Animation ---
+            const heartsContainer = document.getElementById('hearts-container');
+            const heartEmojis = ['💖', '💕', '💗', '💓', '💞'];
+            
+            function createHeart() {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.left = `${Math.random() * 100}vw`;
+                heart.style.animationDuration = `${Math.random() * 5 + 8}s`; // Slower, more gentle
+                heart.style.animationDelay = `${Math.random() * 5}s`;
+                heart.style.fontSize = `${Math.random() * 1 + 1}rem`;
+                heart.innerHTML = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+                heartsContainer.appendChild(heart);
+                
+                // Remove heart from DOM after animation
+                setTimeout(() => {
+                    heart.remove();
+                }, 13000); // Should be longer than animation duration
+            }
+
+            // Create a few hearts every second
+            setInterval(createHeart, 1000);
+        });
+    </script>
+
+</body>
+</html>
